@@ -69,6 +69,8 @@ include ./header
                     .form-group
                         select.form-control(name='category' required)
                             option(value='') -- Select Category --
+                            option(value='1m')= '1 minute'
+                            option(value='1h')= '1 hour'
                             for cat in categories
                                 option(value=cat._id)= cat.name
                     .form-group
