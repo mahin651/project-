@@ -2,8 +2,8 @@ const mongoose = require('./db.js');
 const Schema = mongoose.Schema;
 
 const bidSchema = new Schema({
-    user_id: String,
-    item_id: String,
+    user_id:{type:String},
+    item_id: {type:String},
     date: {type: Number, default: new Date().getTime()},
     price: Number,
 },

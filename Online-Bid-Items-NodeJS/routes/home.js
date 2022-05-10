@@ -115,7 +115,7 @@ router.get('/', (req, res)=>{
                     previous_bids.push(prop);
                 }
                 let category = await Categories.find({_id: currentItem[0].category_id});
-                let owner = await Users.find({_id: currentItem[0].user_id});
+                let owner = await Users.find({_id: currentItem[0].user_id.trim()});
                 let currentPrice = message.content.current_price;
                 let previousBids = message.content.previousBidsUser;
                 let startBidDate = message.content.currentItem.start_bid_date
@@ -271,7 +271,7 @@ wss.on('connection', function connection(ws, req) {
                             found = true;
                             if(JSON.parse(checkUser[i].session).passport){
                                 let userId = JSON.parse(checkUser[i].session).passport.user;
-                                let user = await Users.find({_id: userId}, {_id: 1, address: 1});
+                                let user = await Users.find({_id: userId.trim()}, {_id: 1, address: 1});
                                 if(user.length > 0)
                                     ws.user = user;
                                 else
