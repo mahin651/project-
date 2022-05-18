@@ -12,6 +12,7 @@ include ./header
                             .form-group
                                 p Email address
                                 input.form-control(type='email' name='email')
+                                
                             .form-group
                                 p Country/Address
                                 input.form-control(type='text' name='address')
@@ -52,3 +53,4 @@ include ./header
                             .messages
                                 if(login_errors)
                                     p(style='padding: 5px 10px; color: red')= login_errors
+    
