@@ -2,7 +2,7 @@ include ./header
 
 .container
     .row
-        .col-md-8(style='position: fixed; top: 10px; margin: auto; z-index: 100;')
+        .col-md-8(style='position: absolute; top: 1rem; ; margin: auto; z-index: 100; ')
                     if register
                         form.register(method='post' action='/register')
                             h5(style='text-align: center; margin-top: 10px;') Register
