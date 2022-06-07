@@ -97,7 +97,7 @@ router.post('/register', checkNotAuthenticated, (req, res)=>{
                     errors.push('Please fill all the fields');
             }
             if(req.body.password !== req.body.password2){
-                    errors.push('Passwords are not mutch');
+                    errors.push('Passwords are not matched');
             }
             let checkEmail = await Users.find({email: req.body.email}, {_id: 1});
             if(checkEmail.length > 0){
