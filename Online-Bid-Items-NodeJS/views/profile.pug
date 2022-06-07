@@ -69,12 +69,12 @@ include ./header
                     .form-group
                         select.form-control(name='category' required)
                             option(value='') -- Select Category --
-                            //- option(value='')= 'car'
-                            //- option(value='')= 'bike'
-                            //- option(value='')= 'scooter'
-                            //- option(value='')= 'furniture'
-                            //- option(value='')= 'mobile'
-                            //- option(value='')= 'laptop'
+                            option(value='')= 'car'
+                            option(value='')= 'bike'
+                            option(value='')= 'scooter'
+                            option(value='')= 'furniture'
+                            option(value='')= 'mobile'
+                            option(value='')= 'laptop'
                             for cat in categories
                                 option(value=cat._id)= cat.name
                     .form-group
