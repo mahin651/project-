@@ -271,7 +271,7 @@ wss.on('connection', function connection(ws, req) {
                             found = true;
                             if(JSON.parse(checkUser[i].session).passport){
                                 let userId = JSON.parse(checkUser[i].session).passport.user;
-                                let user = await Users.find({_id: userId}, {_id: 1, address: 1});
+                                let user = await Users.find({_id: userId.trim()}, {_id: 1, address: 1});
                                 if(user.length > 0)
                                     ws.user = user;
                                 else
