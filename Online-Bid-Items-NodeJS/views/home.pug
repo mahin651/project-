@@ -1,6 +1,6 @@
 include ./header
 
-body
+body(style='background-color:#E8E8E8')
     script(src="/scripts/vue.js")
     .container
         if !noItem
@@ -23,7 +23,7 @@ body
                                 span.rightArrow(v-show='rightArrow' @click='next()') &gt;
                                 .circle
                                     // circle buttons added here by javascript dynamically
-            .row
+            .row(style='margin:2px;color:#505050 ')
                 .col-md-6
                     .info
                         div
@@ -38,11 +38,11 @@ body
                         div
                             p= 'Phone number: '
                             p= owner[0].phone
-                        .desc
-                            h6= 'Details: '
+                        div
+                            p= 'Details: '
                             p(style='float: right; display: block; width: 100%')= currentItem[0].detail
 
-                .col-md-6
+                .col-md-6(style='padding30px')
                     .bid
                         .bid-container
                             #activeBorder.active-border
@@ -52,7 +52,7 @@ body
                                     p(style='font-weight: bold;')= currentPrice
                     if loggedInUser
                         .add-bid(style='width: 80%; margin: auto;')
-                            h5 Add a bid
+                            h5 Add a bid    
                             .form-inline
                                 input.form-control(style='width: 80%' type='number' value=`${currentPrice}` min=`${currentPrice+1}`)
                                 p(style='position: relative; top: 5px; left: 10px') $ USD
@@ -61,7 +61,7 @@ body
             .row(style='margin: 30px 5px;')
                 .col-md-6
                     .previous-bids
-                        h5 Previous bids
+                        h5 Placed bids
                         .content
                             if previous_bids
                                 for bid in previous_bids
@@ -76,7 +76,9 @@ body
                             a.form-control.btn(href='/login' style='border: 1px solid silver; margin-bottom: 5px' ) Sign in
                             a.form-control.btn(href='/login' style='border: 1px solid silver;') + Sign up
                     else
+                    
                         a.btn-btn-secondery(href='/profile' style='display:block; text-align: center;') Profile
+                        
 
                 audio(id="clockAudio" controls style="display: none;")
                     source(src="/audio/clock.mp3" type="audio/mp3")
@@ -91,7 +93,7 @@ body
             
         else
             .row
-            div(style='background-color: #e9e9e9 ; height:80rem; ')
+            div(style=' background-image: linear-gradient(#E2E2E2,#C9D6FF);  height:65rem;')
                 .col-12
 
                     div(style='overflow: auto;')
@@ -100,14 +102,14 @@ body
                         a(href='/login' style='display: block; float: right; margin: 5px 10px;') Sign in
           
                         a(href='/profile' style='display: block; float: left; margin: 5px 10px;') Profile
-                    h4 There is no item in the queue 
+                    <h4 style='color:grey; margin:10px ' > ⚠️ There is no item in the queue. </h4>
                      <div>    
 
                      
                      <div style='background-color:#ffffff'>
                   
                      <img  src="../uploads/auction-bids-with-auctioneer-buyers-flat-vector-illustration-isolated_181313-2683.jpeg" style=' width:90% ; margin:20px' > 
-                     <div style='color:grey; padding:20px '>
+                     <div style='color:grey; padding:30px '>
                      <h2> ❗ Auction </h2> 
                      <p>An auction is a sales event wherein potential buyers place competitive bids on assets or services either in an open or closed format. Auctions are popular because buyers and sellers believe they will get a good deal buying or selling assets.</p>
                      <h2>❗ Bidding</h2>
@@ -120,9 +122,9 @@ body
                      </div>
                                              
                      </div>
-                     <button  style='border-radius:20px ;color:blue; padding:2px 30px ;margin:10px auto; transition-duration: 0.4s;' type="button" onclick="alert('Bid Wisely ! It is one stop platforn for Selling and Buying things Wisely  with No partiality. Any malpractice would lead to block on the user.')"> Read Me!</button>
+                     <button  style='background-color: #0086b3;border-radius:20px ;color:#ffffff;display:flex; padding:6px 50px ;margin:20px auto; transition-duration: 0.4s;' type="button" onclick="alert('Bid Wisely ! It is one stop platforn for Selling and Buying things Wisely  with No partiality. Any malpractice would lead to block on the user.')"> Read Me !</button>
 </div>
-    if !noItem
+   if !noItem
         script(src='/scripts/vueapp.js')
         script(src='/scripts/jquery.js')
         script(src='/scripts/script.js')
