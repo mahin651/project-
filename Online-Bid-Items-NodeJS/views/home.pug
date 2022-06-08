@@ -57,7 +57,7 @@ body(style='background-color:#E8E8E8')
                                 input.form-control(style='width: 80%' type='number' value=`${currentPrice}` min=`${currentPrice+1}`)
                                 p(style='position: relative; top: 5px; left: 10px') $ USD
                             p.error(style='color: red; margin: 10px 0px')
-                            button.form-control.btn.btn-primary(onclick='obj.sendBid()' style='margin-top: 10px') Add
+                             button.form-control.btn.btn-primary(onclick='obj.sendBid()' style='margin-top: 10px') Add
             .row(style='margin: 30px 5px;')
                 .col-md-6
                     .previous-bids
@@ -67,7 +67,7 @@ body(style='background-color:#E8E8E8')
                                 for bid in previous_bids
                                     div
                                         p= bid.address
-                                        h6= `${bid.price} ₹ `
+                                        h6= `${bid.price}$ `
                 
                 .col-md-6
                     if !loggedInUser
