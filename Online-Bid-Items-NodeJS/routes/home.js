@@ -115,7 +115,7 @@ router.get('/', (req, res)=>{
                     previous_bids.push(prop);
                 }
                 let category = await Categories.find({_id: currentItem[0].category_id});
-                let owner = await Users.find({_id: currentItem[0].user_id});
+                let owner = await Users.find({_id: currentItem[0].user_id.trim()});
                 let currentPrice = message.content.current_price;
                 let previousBids = message.content.previousBidsUser;
                 let startBidDate = message.content.currentItem.start_bid_date
