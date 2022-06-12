@@ -134,8 +134,8 @@ class ClassAction {
 let obj = new ClassAction();
 let activeBorder = $("#activeBorder");
 let circleContent = $(".circle-content");
-let socket = new WebSocket('ws://localhost:8080');
-socket.onopen = ()=>{
+let socket = new WebSocket('ws://localhost:8080/');
+socket.onopen = ()=>{   
     console.log('connected to the server');
 }
 socket.onmessage = function (event) {
