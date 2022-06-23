@@ -8,27 +8,30 @@ include ./header
                             h5(style='text-align: center; margin-top: 10px;') Register
                             .form-group
                                 p Fullname
-                                input.form-control(type='text' name='fullname')
+                                input.form-control(type='text' name='fullname'  pattern="[a-z A-Z]+" required minlength="2" )
                             .form-group
                                 p Email address
                                 input.form-control(type='email' name='email')
                                 
                             .form-group
                                 p Country/Address
-                                input.form-control(type='text' name='address')
+                                input.form-control(type='text' name='address' required minlength="2" )
                             .form-group
                                 p Phone number
-                                input.form-control(type='text' name='phone')
+                                input.form-control(type='phone number' name='phone'  required minlength="10")
                             .form-group
                                 p Password
-                                input.form-control(type='password' name='password')
+                                input.form-control(type='password' name='password'  pattern="^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$" )
+                
                             .form-group
                                 p Re enter password
                                 input.form-control(type='password' name='password2')
+                        
                             .form-group
                                 input.btn.btn-primary.form-control(type='submit' value='Submit')
                             .form-group
-                                a( href='/login' style='color: #3cacd7; cursor: pointer;') Login
+                                a( href='/login' style='color: #3cacd7; cursor: pointer;') Login </a> <br>
+                                  code(style='color:red') * Password must be min 8 characters, and have 1 Special Character, 1 Uppercase, 1 Number and 1 Lowercase
                             .messages
                                 if submited
                                     if errors
